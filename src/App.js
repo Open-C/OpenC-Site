@@ -1,7 +1,14 @@
 import React from "react";
+import { Route } from "react-router-dom";
+import Header from "./Components/Header";
 
-function App() {
-  return <div>So long and thanks for all the fish</div>;
-}
+const App = () => {
+  return (
+    <div>
+      <Header showLogo={true} />
+      So Long and Thanks for All the Fish
+    </div>
+  );
+};
 
 export default App;
