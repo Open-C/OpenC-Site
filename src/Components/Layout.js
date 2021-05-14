@@ -3,37 +3,38 @@ import { useScreenType } from "../Hooks/useScreenType";
 import { Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  root: (props) => ({
     background: props.background,
     width: "100%",
     height: "50rem",
     display: "flex",
     justifyContent: "center",
-    alignContent: "center",
-  },
+    alignItems: "center",
+  }),
   container: {
-    width: "min(80%, 93.125rem)",
+    width: "min(90%, 93.125rem)",
     display: "flex",
     marginLeft: "auto",
     marginRight: "auto",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignContent: "center",
     alignItems: "center",
   },
 }));
 
 const Layout = (props) => {
-  const { left, right, priority = "left", background } = props;
+  const { left, right, priority = "left", background, children } = props;
   const classes = useStyles({ background });
   const screenType = useScreenType();
 
   return (
     <div className={classes.root}>
       {screenType === "fullscreen" ? (
-        props[priority]
+        props[priority] || children
       ) : (
         <div className={classes.container}>
           {left}
+          {children}
           {right}
         </div>
       )}

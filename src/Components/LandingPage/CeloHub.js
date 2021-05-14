@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../Layout";
-import logo from "../../Assets/centro-logo-full.png";
-import mockups from "../../Assets/centro-mockups.png";
+import logo from "../../Assets/celohub-full-logo.png";
+import mockups from "../../Assets/celohub-mockup.png";
 import { makeStyles } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import { enrollBtn } from "../shared/MaterialStyles";
@@ -23,40 +23,40 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     font: "normal normal normal 2rem/2.625rem Lato",
-    color: "#FFFFFF",
+    color: "#000000",
     opacity: 0.75,
     marginTop: "2rem",
   },
   button: enrollBtn,
 }));
 
-const Centro = (props) => {
-  const { fullScreen } = props;
+const CeloHub = (props) => {
   const classes = useStyles({
-    buttonBackground: "#6153FF",
-    buttonColor: "#FFFFFF",
-    fullScreen,
+    buttonBackground: "#35D07F",
+    buttonColor: "#000000",
+    fullScreen: props.fullScreen,
   });
 
-  const RightSide = (
+  const LeftSide = (
     <div className={classes.infoContainer}>
       <img src={logo} className={classes.centroLogo} />
       <div className={classes.content}>
-        Access everything in the Celo DeFi ecosystem from one app. Coming soon!
+        A website for everything built on Celo —Apps, Dev Tools, Infrastructure,
+        & more.
       </div>
-      <Button className={classes.button}>Join the Waitlist</Button>
+      <Button className={classes.button}>View Website</Button>
     </div>
   );
-  const LeftSide = <img src={mockups} className={classes.mockup} />;
+  const RightSide = <img src={mockups} className={classes.mockup} />;
 
   return (
     <Layout
       left={LeftSide}
       right={RightSide}
-      priority="right"
-      background="#5849FD"
+      priority="left"
+      background="#FFFFFF"
     />
   );
 };
 
-export default Centro;
+export default CeloHub;

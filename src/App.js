@@ -1,13 +1,17 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Route } from "react-router-dom";
 import Header from "./Components/Header";
+import LandingPage from "./Pages/LandingPage";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Header showLogo={true} />
-      So Long and Thanks for All the Fish
-    </div>
+      <Suspense fallback={LandingPage}>
+        <Route path="/" exact component={LandingPage} />
+        {/*Add new routes here!*/}
+      </Suspense>
+    </>
   );
 };
 

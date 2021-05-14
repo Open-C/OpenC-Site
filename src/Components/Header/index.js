@@ -7,26 +7,28 @@ import { withRouter } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    height: "9.875rem",
+    height: "7rem",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#FFFFFF",
+    position: "sticky",
+    left: 0,
+    top: 0,
     zIndex: 999,
   },
   buttonGroup: {
     height: "2rem",
-    width: "30.375rem",
     display: "flex",
     justifyContent: "space-between",
-    alignContent: "center",
+    alignContent: "flex-end",
     marginRight: "6rem",
     marginLeft: "auto",
   },
   logo: {
     width: "15.625rem",
     height: "5.375rem",
-    marginLeft: "6.8125rem",
+    marginLeft: "2rem",
     marginRight: "auto",
   },
 }));
@@ -41,8 +43,6 @@ const Header = (props) => {
         <Button variant="text">Centro</Button>
         <Divider />
         <Button variant="text">CeloHub</Button>
-        <Divider />
-        <Button variant="text">Incognitos</Button>
         <Divider />
         <Button variant="text">Contact</Button>
       </div>
