@@ -129,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
     width: !props.fullScreen && "50%",
     alignItems: props.fullScreen ? "center" : "flex-start",
     padding: "1rem",
-
+    boxShadow: props.fullScreen && "-3px 4px 8px 1px #5849fd",
     font: "normal normal normal 2.5rem/3rem Lato",
   }),
   openCLogo: {
@@ -157,9 +157,11 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     opacity: 0.75,
-    marginTop: "2rem",
-    fontSize: "2rem",
-    lineHeight: "2.25rem",
+    marginTop: "1rem",
+    "@media (max-width:800px)": {
+      fontSize: "1.5rem",
+      lineHeight: "1.75rem",
+    },
   },
   subtitle: {
     opacity: 1,
@@ -169,7 +171,7 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "6rem",
     width: "auto",
     cursor: "pointer",
-    marginTop: "auto",
+    marginTop: "min(auto, 3rem)",
     marginBottom: "1rem",
   },
   scrollDetection: {

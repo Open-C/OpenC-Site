@@ -13,13 +13,14 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     height: "auto",
-    width: "34rem",
+    width: "min(34rem, 90%)",
   },
   infoContainer: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     padding: "1rem",
+    width: "100%",
   },
 }));
 
