@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Layout from "../Layout";
 import logo from "../../Assets/centro-logo-full.png";
 import mockups from "../../Assets/centro-mockups.png";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import { enrollBtn } from "../shared/MaterialStyles";
 
@@ -21,16 +21,16 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     width: "min(37rem, 90%)",
   },
-  content: {
-    font: "normal normal normal 2rem/2.625rem Lato",
+  content: (props) => ({
     color: "#FFFFFF",
     opacity: 0.75,
     marginTop: "2rem",
-  },
-  button: enrollBtn,
+    textAlign: props.fullScreen && "center",
+  }),
+  button: (props) => enrollBtn(props),
 }));
 
-const Centro = (props) => {
+const Centro = forwardRef((props, ref) => {
   const { fullScreen } = props;
   const classes = useStyles({
     buttonBackground: "#6153FF",
@@ -41,22 +41,34 @@ const Centro = (props) => {
   const RightSide = (
     <div className={classes.infoContainer}>
       <img src={logo} className={classes.centroLogo} />
-      <div className={classes.content}>
+      {/* <div className={classes.content}>
         Access everything in the Celo DeFi ecosystem from one app. Coming soon!
-      </div>
-      <Button className={classes.button}>Join the Waitlist</Button>
+      </div> */}
+      <Typography variant="h2" className={classes.content}>
+        Access everything in the Celo DeFi ecosystem from one app. Coming soon!
+      </Typography>
+      <Button
+        className={classes.button}
+        onClick={() =>
+          window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+        }
+      >
+        Join the Waitlist
+      </Button>
     </div>
   );
   const LeftSide = <img src={mockups} className={classes.mockup} />;
 
   return (
-    <Layout
-      left={LeftSide}
-      right={RightSide}
-      priority="right"
-      background="#5849FD"
-    />
+    <div ref={ref}>
+      <Layout
+        left={LeftSide}
+        right={RightSide}
+        priority="right"
+        background="#5849FD"
+      />
+    </div>
   );
-};
+});
 
 export default Centro;

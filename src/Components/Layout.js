@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   root: (props) => ({
     background: props.background,
     width: "100%",
-    height: "50rem",
+    height: "min(45rem, 90vh)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -23,8 +23,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Layout = (props) => {
-  const { left, right, priority = "left", background, children } = props;
-  const classes = useStyles({ background });
+  const {
+    left,
+    right,
+    priority = "left",
+    background,
+    children,
+    height = "50rem",
+  } = props;
+  const classes = useStyles({ background, height });
   const screenType = useScreenType();
 
   return (

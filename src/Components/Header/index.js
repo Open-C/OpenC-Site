@@ -1,8 +1,8 @@
 import React from "react";
-import { Grid, makeStyles, Button } from "@material-ui/core";
-import { Divider } from "../shared/StyledComponents";
+import { makeStyles } from "@material-ui/core";
 import logo from "../../Assets/opencfull@3x.png";
 import { withRouter } from "react-router-dom";
+import HeaderButtons from "./HeaderButtons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,14 +16,6 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     top: 0,
     zIndex: 999,
-  },
-  buttonGroup: {
-    height: "2rem",
-    display: "flex",
-    justifyContent: "space-between",
-    alignContent: "flex-end",
-    marginRight: "6rem",
-    marginLeft: "auto",
   },
   logo: {
     width: "15.625rem",
@@ -39,13 +31,7 @@ const Header = (props) => {
   return (
     <div className={classes.root}>
       {showLogo && <img src={logo} alt="OpenC Logo" className={classes.logo} />}
-      <div className={classes.buttonGroup}>
-        <Button variant="text">Centro</Button>
-        <Divider />
-        <Button variant="text">CeloHub</Button>
-        <Divider />
-        <Button variant="text">Contact</Button>
-      </div>
+      <HeaderButtons {...props} />{" "}
     </div>
   );
 };
