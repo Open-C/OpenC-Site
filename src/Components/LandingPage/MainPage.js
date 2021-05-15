@@ -129,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
     width: !props.fullScreen && "50%",
     alignItems: props.fullScreen ? "center" : "flex-start",
     padding: "1rem",
-    boxShadow: props.fullScreen && "-3px 4px 8px 1px #5849fd",
+    boxShadow: props.fullScreen ? "-3px 4px 8px 1px #5849fd" : "none",
     font: "normal normal normal 2.5rem/3rem Lato",
   }),
   openCLogo: {

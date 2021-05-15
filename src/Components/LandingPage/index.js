@@ -8,9 +8,16 @@ import { useScreenType } from "../../Hooks/useScreenType";
 import useOnScreen from "../../Hooks/useOnScreen";
 import { makeStyles } from "@material-ui/core";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    overflowX: "hidden",
+  },
+}));
+
 const LandingPage = (props) => {
   const isFullScreen = useScreenType() === "fullscreen";
   const centroRef = useRef();
+  const classes = useStyles();
   // const centroVisible = useOnScreen(centroRef);
   // useEffect(() => {
   //   centroVisible && scrollToRef(centroRef);
@@ -38,7 +45,7 @@ const LandingPage = (props) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <>
+    <div className={classes.root}>
       <MainPage
         scrollDown={() => scrollToRef(centroRef)}
         fullScreen={isFullScreen}
@@ -47,7 +54,7 @@ const LandingPage = (props) => {
       <CeloHub fullScreen={isFullScreen} />
       <Voila />
       <Pollen fullScreen={isFullScreen} />
-    </>
+    </div>
   );
 };
 
