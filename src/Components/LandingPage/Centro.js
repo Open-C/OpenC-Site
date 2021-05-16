@@ -16,10 +16,18 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: props.fullScreen ? "center" : "flex-start",
     padding: "1rem",
+    // "@media (max-width:799px)": {
+    //   boxShadow: `${theme.palette.primary.light} -3px 4px 20px 0px`,
+    //   width: "90%",
+    //   borderRadius: "2%",
+    // },
   }),
   centroLogo: {
     height: "auto",
     width: "min(37rem, 75%)",
+    "@media (max-width:799px)": {
+      width: "90%",
+    },
   },
   content: (props) => ({
     color: "#FFFFFF",

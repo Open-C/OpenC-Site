@@ -7,6 +7,7 @@ import MainPage from "./MainPage";
 import { useScreenType } from "../../Hooks/useScreenType";
 import useOnScreen from "../../Hooks/useOnScreen";
 import { makeStyles } from "@material-ui/core";
+import ContactUs from "./ContactUs";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,6 +55,7 @@ const LandingPage = (props) => {
       <CeloHub fullScreen={isFullScreen} />
       <Voila />
       <Pollen fullScreen={isFullScreen} />
+      <ContactUs />
     </div>
   );
 };

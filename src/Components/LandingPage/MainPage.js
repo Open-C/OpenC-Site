@@ -129,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     width: !props.fullScreen && "70%",
-    alignItems: props.fullScreen ? "center" : "flex-start",
+    alignItems: "flex-start",
     padding: "1rem",
     "@media (max-width:799px)": {
       boxShadow: `${theme.palette.primary.light} -3px 3px 20px 0px, ${theme.palette.primary.dark} -1px 1px 7px 0px`,
@@ -148,6 +148,9 @@ const useStyles = makeStyles((theme) => ({
     left: "5vw",
     "@media (min-width:1400px)": {
       left: "20vw",
+    },
+    "@media (max-width:799px)": {
+      width: "80%",
     },
   },
   openCLogoHeader: {

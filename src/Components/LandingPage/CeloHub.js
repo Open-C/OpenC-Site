@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
   centroLogo: {
     height: "auto",
     width: "min(37rem, 70%)",
+    "@media (max-width:799px)": {
+      width: "90%",
+    },
   },
   content: (props) => ({
     opacity: 0.75,

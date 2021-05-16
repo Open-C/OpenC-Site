@@ -40,11 +40,10 @@ const useStyles = makeStyles((theme) => ({
 const HeaderButtons = (props) => {
   const { fullScreen } = props;
   const classes = useStyles();
-  return fullScreen ? (
-    <div className={classes.hamburger}>
-      <HamburgerMenu isOpen={false} menuClicked={null} />
-    </div>
-  ) : (
+  return fullScreen ? // <div className={classes.hamburger}>
+  //   <HamburgerMenu isOpen={false} menuClicked={null} />
+  // </div>
+  null : (
     <div className={classes.buttonGroup}>
       <Button className={classes.button} variant="text">
         Centro

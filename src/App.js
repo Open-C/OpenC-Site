@@ -21,8 +21,8 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: "Lato, Arial",
     h2: {
-      fontSize: "2rem",
-      lineHeight: "2.5rem",
+      fontSize: "1.3rem",
+      lineHeight: "1.5rem",
       "@media (min-width: 800px)": {
         fontSize: "1.5rem",
         lineHeight: "2rem",

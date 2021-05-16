@@ -9,7 +9,7 @@ import { enrollBtn } from "../shared/MaterialStyles";
 const useStyles = makeStyles((theme) => ({
   logo: {
     height: "auto",
-    width: "13rem",
+    width: "min(13rem, 50%)",
   },
   title: {
     height: "auto",

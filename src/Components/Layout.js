@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    "@media (max-width:799px)": {
+      height: "60vh",
+      padding: "2rem",
+    },
   }),
   container: {
     width: "min(90%, 93.125rem)",

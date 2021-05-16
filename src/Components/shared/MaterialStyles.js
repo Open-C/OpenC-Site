@@ -9,11 +9,12 @@ export const enrollBtn = (props) => ({
   font: "normal normal normal 1.5rem/1.75rem Lato",
   textTransform: "none",
   marginTop: "2rem",
-  "@media (min-width:800px) and (max-width:1260px)": {
-    fontSize: "1.5rem",
+  "@media (max-width:1260px)": {
+    fontSize: "1.25rem",
     lineHeight: "1.75rem",
-    height: "4rem",
-    width: `${(18.75 / 5.625) * 4}rem`,
-    borderRadius: `${(2 / 5.625) * 4}rem`,
+    height: "2.5rem",
+    width: "fit-content", //`${(18.75 / 5.625) * 4}rem`,
+    borderRadius: `${(2 / 5.625) * 2}rem`,
+    padding: "1rem",
   },
 });
