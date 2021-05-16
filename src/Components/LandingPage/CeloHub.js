@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: props.fullScreen ? "center" : "flex-start",
     padding: "1rem",
-    width: "50%",
+    width: !props.fullScreen && "50%",
   }),
   centroLogo: {
     height: "auto",
