@@ -178,20 +178,20 @@ const useStyles = makeStyles((theme) => ({
   },
   "@keyframes dancing-arrow": {
     "0%": {
-      marginTop: "3rem",
+      marginTop: "2rem",
     },
-    "40%": {
-      marginTop: "5rem",
+    "33%": {
+      marginTop: "4rem",
     },
     "100%": {
-      marginTop: "3rem",
+      marginTop: "2rem",
     },
   },
   down: {
     maxHeight: "3rem",
     width: "auto",
     cursor: "pointer",
-    marginTop: "3rem",
+    marginTop: "2rem",
     position: "absolute",
     animationName: "$dancing-arrow",
     animationDuration: "2s",
