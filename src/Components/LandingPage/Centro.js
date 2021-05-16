@@ -9,7 +9,7 @@ import { enrollBtn } from "../shared/MaterialStyles";
 const useStyles = makeStyles((theme) => ({
   mockup: {
     height: "auto",
-    width: "min(41.9rem, 70%)",
+    width: "min(41.9rem, 50%)",
   },
   infoContainer: (props) => ({
     display: "flex",
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   }),
   centroLogo: {
     height: "auto",
-    width: "min(37rem, 90%)",
+    width: "min(37rem, 75%)",
   },
   content: (props) => ({
     color: "#FFFFFF",

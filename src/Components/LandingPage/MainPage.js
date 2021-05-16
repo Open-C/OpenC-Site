@@ -53,7 +53,7 @@ const MainPage = (props) => {
         Open Source Projects on the Celo Blockchain
       </Typography>
       <Typography variant="h2" className={classes.content}>
-        Funded by the Celo Foundation, CCF, and Flori Ventures.
+        Funded by the Celo Foundation, and Flori Ventures.
       </Typography>
     </div>
   );
@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
   containerTop: {
     width: "100%",
     display: "flex",
-    height: "7rem",
+    height: "4rem",
     alignItems: "center",
     position: "fixed",
     left: 0,
@@ -110,23 +110,25 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     display: "flex",
     flexDirection: "column",
+    justifyContent: "center",
+    positon: "relative",
   },
   containerInner: {
     display: "flex",
     width: "100%",
     justifyContent: "space-between",
-    alignContent: "center",
-    alignItems: "center",
-    margin: "auto",
+    alignItems: "flex-end",
+    //margin: "auto",
+    alignSelf: "center",
   },
   projects: {
     height: "auto",
-    width: "min(35rem, 40%)",
+    width: "min(35rem, 30%)",
   },
   infoContainer: (props) => ({
     display: "flex",
     flexDirection: "column",
-    width: !props.fullScreen && "50%",
+    width: !props.fullScreen && "70%",
     alignItems: props.fullScreen ? "center" : "flex-start",
     padding: "1rem",
     boxShadow: props.fullScreen ? "-3px 4px 8px 1px #5849fd" : "none",
@@ -134,22 +136,25 @@ const useStyles = makeStyles((theme) => ({
   }),
   openCLogo: {
     height: "auto",
-    width: "min(37rem, 90%)",
+    width: "min(30rem, 50%)",
     transition: "all 1s ease-in-out",
     zIndex: 999,
     position: "sticky",
     top: 10,
     left: "5vw",
+    "@media (min-width:1400px)": {
+      left: "20vw",
+    },
   },
   openCLogoHeader: {
-    width: "15.625rem",
+    width: "10.25rem",
     height: "auto",
     //marginLeft: "2rem",
     //marginRight: "auto",
-    transition: "all 1s ease-in-out",
+    transition: "all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
     position: "fixed",
-    left: "2rem",
-    top: 10,
+    left: "1rem",
+    top: ".25rem",
     //transform: "translate3d(-150px, 0, 0)",
   },
   logoPlaceHolder: {
@@ -158,7 +163,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     opacity: 0.75,
     marginTop: "1rem",
-    "@media (max-width:800px)": {
+    "@media (max-width:1400px)": {
       fontSize: "1.5rem",
       lineHeight: "1.75rem",
     },
@@ -166,13 +171,31 @@ const useStyles = makeStyles((theme) => ({
   subtitle: {
     opacity: 1,
     marginTop: "2rem",
+    "@media (max-width:1400px)": {
+      fontSize: "2rem",
+      lineHeight: "2.25rem",
+    },
+  },
+  "@keyframes dancing-arrow": {
+    "0%": {
+      marginTop: "3rem",
+    },
+    "40%": {
+      marginTop: "5rem",
+    },
+    "100%": {
+      marginTop: "3rem",
+    },
   },
   down: {
-    maxHeight: "6rem",
+    maxHeight: "3rem",
     width: "auto",
     cursor: "pointer",
-    marginTop: "min(auto, 3rem)",
-    marginBottom: "1rem",
+    marginTop: "3rem",
+    position: "absolute",
+    animationName: "$dancing-arrow",
+    animationDuration: "2s",
+    animationIterationCount: "infinite",
   },
   scrollDetection: {
     width: 5,

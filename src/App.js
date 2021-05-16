@@ -6,6 +6,18 @@ import { useScreenType } from "./Hooks/useScreenType";
 import { createMuiTheme, ThemeProvider, CssBaseline } from "@material-ui/core";
 
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#776CF5",
+      light: "#C5C0FB",
+      dark: "#4B3CF1",
+    },
+    secondary: {
+      main: "#F0BE16",
+      dark: "#AF880B",
+      light: "#F5D468",
+    },
+  },
   typography: {
     fontFamily: "Lato, Arial",
     h2: {
@@ -16,6 +28,10 @@ const theme = createMuiTheme({
         lineHeight: "2rem",
       },
       "@media (min-width:1260px)": {
+        fontSize: "1.75rem",
+        lineHeight: "2rem",
+      },
+      "@media (min-width:1400px)": {
         fontSize: "2rem",
         lineHeight: "2.5rem",
       },

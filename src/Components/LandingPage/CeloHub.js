@@ -9,21 +9,22 @@ import { enrollBtn } from "../shared/MaterialStyles";
 const useStyles = makeStyles((theme) => ({
   mockup: {
     height: "auto",
-    width: "min(41.9rem, 70%)",
+    width: "min(41.9rem, 50%)",
   },
   infoContainer: (props) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: props.fullScreen ? "center" : "flex-start",
     padding: "1rem",
+    width: "50%",
   }),
   centroLogo: {
     height: "auto",
-    width: "min(37rem, 90%)",
+    width: "min(37rem, 70%)",
   },
   content: (props) => ({
     opacity: 0.75,
-    marginTop: "2rem",
+    marginTop: "1.5rem",
     textAlign: props.fullScreen && "center",
   }),
   button: enrollBtn,

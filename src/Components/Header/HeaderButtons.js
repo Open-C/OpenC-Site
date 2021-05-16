@@ -11,13 +11,23 @@ const useStyles = makeStyles((theme) => ({
     alignContent: "flex-end",
     marginRight: "6rem",
     marginLeft: "auto",
+    "&:hover": {
+      color: theme.palette.secondary.main,
+    },
     // marginBottom: "auto",
     // marginTop:
   },
   button: {
     textTransform: "none",
-    font: "normal normal normal 1.5rem/2rem Lato",
+    font: "normal normal normal 1.3rem/1rem Lato",
     opacity: 0.75,
+    transition: "color .5s cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+    "&:hover": {
+      color: theme.palette.primary.main,
+      background: "transparent",
+    },
+    marginLeft: ".25rem",
+    marginRight: ".25rem",
   },
   hamburger: {
     marginLeft: "auto",
@@ -39,11 +49,11 @@ const HeaderButtons = (props) => {
       <Button className={classes.button} variant="text">
         Centro
       </Button>
-      <Divider />
+      <Divider opacity={0.5} />
       <Button className={classes.button} variant="text">
         CeloHub
       </Button>
-      <Divider />
+      <Divider opacity={0.5} />
       <Button className={classes.button} variant="text">
         Contact
       </Button>

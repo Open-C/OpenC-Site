@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     height: "auto",
     width: "min(34rem, 90%)",
+    marginTop: "1.75rem",
   },
   infoContainer: {
     display: "flex",

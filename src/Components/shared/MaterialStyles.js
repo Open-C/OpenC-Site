@@ -3,10 +3,10 @@ export const enrollBtn = (props) => ({
   boxShadow: "0px 3px 2px #2700FF29",
   borderRadius: "2rem",
   opacity: 1,
-  height: "5.625rem",
-  width: "18.75rem",
+  height: "3.5rem",
+  width: "14rem",
   color: `${props.buttonColor}`,
-  font: "normal normal normal 2rem/2.25rem Lato",
+  font: "normal normal normal 1.5rem/1.75rem Lato",
   textTransform: "none",
   marginTop: "2rem",
   "@media (min-width:800px) and (max-width:1260px)": {
