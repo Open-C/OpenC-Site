@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignContent: "flex-end",
-    marginRight: "6rem",
+    marginRight: "2rem",
     marginLeft: "auto",
     "&:hover": {
       color: theme.palette.secondary.main,
