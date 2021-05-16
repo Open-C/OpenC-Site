@@ -131,7 +131,11 @@ const useStyles = makeStyles((theme) => ({
     width: !props.fullScreen && "70%",
     alignItems: props.fullScreen ? "center" : "flex-start",
     padding: "1rem",
-    boxShadow: props.fullScreen ? "-3px 4px 8px 1px #5849fd" : "none",
+    "@media (max-width:799px)": {
+      boxShadow: `${theme.palette.primary.light} -3px 3px 20px 0px, ${theme.palette.primary.dark} -1px 1px 7px 0px`,
+      padding: "2rem",
+      borderRadius: "2rem",
+    },
     font: "normal normal normal 2.5rem/3rem Lato",
   }),
   openCLogo: {
