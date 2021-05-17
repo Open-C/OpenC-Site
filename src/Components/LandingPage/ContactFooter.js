@@ -8,27 +8,60 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    width: "100%",
+    background: (props) => props.background || "#5849FD",
+  },
+  iconContainer: {
+    display: "flex",
     width: "min(25rem, 30%)",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: "4rem",
     marginLeft: "auto",
     marginRight: "auto",
+    padding: "1rem",
+    marginBottom: "2rem",
+    marginTop: "-2rem",
   },
   icon: {
     width: "20%",
     height: "auto",
+    cursor: "pointer",
   },
 }));
 
-const ContactFooter = () => {
-  const classes = useStyles();
+const ContactFooter = (props) => {
+  const { background } = props;
+  const classes = useStyles({ background });
   return (
     <div className={classes.root}>
-      <img src={github} alt="github" className={classes.icon} />
-      <img src={linkedin} alt="github" className={classes.icon} />
-      <img src={medium} alt="github" className={classes.icon} />
-      <img src={twitter} alt="github" className={classes.icon} />
+      <div className={classes.iconContainer}>
+        <img
+          src={github}
+          alt="github"
+          className={classes.icon}
+          onClick={() => window.open("https://github.com/Open-C")}
+        />
+        <img
+          src={linkedin}
+          alt="github"
+          className={classes.icon}
+          onClick={() =>
+            window.open("https://www.linkedin.com/company/celoorg/")
+          }
+        />
+        <img
+          src={medium}
+          alt="github"
+          className={classes.icon}
+          onClick={() => window.open("https://www.medium.com")}
+        />
+        <img
+          src={twitter}
+          alt="github"
+          className={classes.icon}
+          onClick={() => window.open("https://www.twitter.com")}
+        />
+      </div>
     </div>
   );
 };
