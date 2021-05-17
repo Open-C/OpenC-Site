@@ -13,14 +13,14 @@ const useStyles = makeStyles((theme) => ({
   },
   iconContainer: {
     display: "flex",
-    width: "min(25rem, 30%)",
+    width: "min(25rem, 50%)",
     justifyContent: "space-between",
     alignItems: "center",
     marginLeft: "auto",
     marginRight: "auto",
     padding: "1rem",
-    marginBottom: "2rem",
-    marginTop: "-2rem",
+    marginBottom: "auto",
+    marginTop: "auto",
   },
   icon: {
     width: "20%",
