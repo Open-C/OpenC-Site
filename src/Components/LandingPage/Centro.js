@@ -57,9 +57,7 @@ const Centro = forwardRef((props, ref) => {
       </Typography>
       <Button
         className={classes.button}
-        onClick={() =>
-          window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-        }
+        onClick={() => window.open("https://forms.gle/qckLeufNDWXURn8i9")}
       >
         Join the Waitlist
       </Button>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TextField, makeStyles, Button, Typography } from "@material-ui/core";
 import { enrollBtn } from "../shared/MaterialStyles";
 import Layout from "../Layout";
+import ContactFooter from "./ContactFooter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -9,6 +10,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    marginRight: "auto",
+    marginLeft: "auto",
   },
   button: enrollBtn,
   input: {
@@ -37,48 +40,61 @@ const ContactUs = (props) => {
       [name]: value,
     });
   };
-
+  const submitForm = () =>
+    setFields({
+      name: "",
+      email: "",
+      message: "",
+    });
   const form = (
-    <div className={classes.root}>
-      <Typography variant="h1" className={classes.title}>
-        Contact Us
-      </Typography>
-      <TextField
-        name="name"
-        value={fields.name}
-        label="Name"
-        variant="filled"
-        onChange={handleChange}
-        fullWidth
-        className={classes.input}
-        InputLabelProps={{ color: "secondary" }}
-        FormHelperTextProps={{ color: "secondary" }}
-      />
-      <TextField
-        name="email"
-        value={fields.email}
-        label="Email"
-        variant="filled"
-        onChange={handleChange}
-        fullWidth
-        className={classes.input}
-        InputLabelProps={{ color: "secondary" }}
-      />
-      <TextField
-        name="message"
-        value={fields.message}
-        label="Message"
-        variant="filled"
-        multiline
-        rows={5}
-        onChange={handleChange}
-        fullWidth
-        className={classes.input}
-        InputLabelProps={{ color: "secondary" }}
-      />
-      <Button variant="contained" color="primary" className={classes.button}>
-        Submit
-      </Button>
+    <div>
+      <div className={classes.root}>
+        <Typography variant="h1" className={classes.title}>
+          Contact Us
+        </Typography>
+        <TextField
+          name="name"
+          value={fields.name}
+          label="Name"
+          variant="filled"
+          onChange={handleChange}
+          fullWidth
+          className={classes.input}
+          InputLabelProps={{ color: "secondary" }}
+          FormHelperTextProps={{ color: "secondary" }}
+        />
+        <TextField
+          name="email"
+          value={fields.email}
+          label="Email"
+          variant="filled"
+          onChange={handleChange}
+          fullWidth
+          className={classes.input}
+          InputLabelProps={{ color: "secondary" }}
+        />
+        <TextField
+          name="message"
+          value={fields.message}
+          label="Message"
+          variant="filled"
+          multiline
+          rows={5}
+          onChange={handleChange}
+          fullWidth
+          className={classes.input}
+          InputLabelProps={{ color: "secondary" }}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          onClick={submitForm}
+        >
+          Submit
+        </Button>
+      </div>
+      <ContactFooter />
     </div>
   );
 
