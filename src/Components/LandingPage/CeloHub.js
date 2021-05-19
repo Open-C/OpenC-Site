@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   infoContainer: (props) => ({
     display: "flex",
     flexDirection: "column",
-    alignItems: props.fullScreen ? "center" : "flex-start",
+    //alignItems: props.fullScreen ? "center" : "flex-start",
     padding: "1rem",
     width: !props.fullScreen && "50%",
   }),
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   content: (props) => ({
     opacity: 0.75,
     marginTop: "1.5rem",
-    textAlign: props.fullScreen && "center",
+    //textAlign: props.fullScreen && "center",
   }),
   button: (props) =>
     enrollBtn({
