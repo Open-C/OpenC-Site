@@ -217,7 +217,18 @@ const useStyles = makeStyles((theme) => ({
     },
     //transform: "translate3d(-150px, 0, 0)",
   },
-  circle: { width: "30%", height: "auto", borderRadius: "100%" },
+  circle: {
+    width: "30%",
+    height: "auto",
+    borderRadius: "100%",
+    transition: "all 1s ease-in",
+
+    "&:hover": {
+      transform: "rotate3d(0, 1, 0, 540deg)",
+      boxShadow: "1px 1px 10px 3px " + theme.palette.secondary.main,
+      transition: "all 0.7s ease-in",
+    },
+  },
   logoText: { width: "65%", height: "auto" },
   logoPlaceHolder: {
     height: "5rem",
