@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Layout from "../Layout";
 import logo from "../../Assets/celohub-full-logo.png";
 import mockups from "../../Assets/celohub-mockup.png";
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     }),
 }));
 
-const CeloHub = (props) => {
+const CeloHub = forwardRef((props, ref) => {
   const classes = useStyles({
     buttonBackground: "#35D07F",
     buttonColor: "#000000",
@@ -64,13 +64,15 @@ const CeloHub = (props) => {
   const RightSide = <img src={mockups} className={classes.mockup} />;
 
   return (
-    <Layout
-      left={LeftSide}
-      right={RightSide}
-      priority="left"
-      background="#FFFFFF"
-    />
+    <div ref={ref}>
+      <Layout
+        left={LeftSide}
+        right={RightSide}
+        priority="left"
+        background="#FFFFFF"
+      />
+    </div>
   );
-};
+});
 
 export default CeloHub;

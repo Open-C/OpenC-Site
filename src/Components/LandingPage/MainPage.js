@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import logo from "../../Assets/opencfull@3x.png";
+import circle from "../../Assets/openC-color.png";
+import logoText from "../../Assets/openC-text.png";
 import projectsImg from "../../Assets/featured-projects-icon.png";
 import downArrow from "../../Assets/DownArrow.png";
 import { makeStyles, Typography } from "@material-ui/core";
@@ -7,7 +9,14 @@ import HeaderButtons from "../Header/HeaderButtons";
 import clsx from "clsx";
 
 const MainPage = (props) => {
-  const { scrollDown, fullScreen } = props;
+  const {
+    scrollDown,
+    fullScreen,
+    scrollTo,
+    centroRef,
+    celoHubRef,
+    contactUsRef,
+  } = props;
   const classes = useStyles({ fullScreen });
 
   const logoRef = useRef(null);
@@ -34,20 +43,48 @@ const MainPage = (props) => {
       className={clsx(classes.openCLogo, {
         [classes.openCLogoHeader]: !isIntersecting,
       })}
+      onClick={
+        !isIntersecting &&
+        (() => window.scrollTo({ top: 0, behavior: "smooth" }))
+      }
     />
+  );
+
+  const Logov2 = (
+    <div
+      className={clsx(classes.openCLogo, {
+        [classes.openCLogoHeader]: !isIntersecting,
+      })}
+      onClick={
+        !isIntersecting &&
+        (() => window.scrollTo({ top: 0, behavior: "smooth" }))
+      }
+    >
+      <img
+        src={circle}
+        alt="OpenC Logo"
+        id="openC-logo"
+        className={classes.circle}
+      />
+      <img src={logoText} alt="OpenC" className={classes.logoText} />
+    </div>
   );
 
   const Top = (
     <div className={classes.containerTop}>
       {/* {!isIntersecting && Logo} */}
-      <HeaderButtons fullScreen={fullScreen} />
+      <HeaderButtons
+        fullScreen={fullScreen}
+        handleClick={scrollTo}
+        {...{ centroRef, celoHubRef, contactUsRef }}
+      />
     </div>
   );
   const Left = (
     <div className={classes.infoContainer}>
       <div ref={logoRef} className={classes.scrollDetection} />
 
-      {Logo}
+      {Logov2}
       {!isIntersecting && <div className={classes.logoPlaceHolder} />}
       <Typography variant="h1" className={classes.subtitle}>
         Open Source Projects on the Celo Blockchain
@@ -150,6 +187,8 @@ const useStyles = makeStyles((theme) => ({
     transition: "all 1s ease-in-out",
     zIndex: 999,
     position: "sticky",
+    display: "flex",
+    alignItems: "center",
     top: 10,
     left: "5vw",
     "@media (min-width:1400px)": {
@@ -167,6 +206,8 @@ const useStyles = makeStyles((theme) => ({
     transition: "all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
     position: "fixed",
     left: "5vw",
+    display: "flex",
+    alignItems: "center",
     "@media (min-width:1400px)": {
       left: "20vw",
     },
@@ -176,6 +217,8 @@ const useStyles = makeStyles((theme) => ({
     },
     //transform: "translate3d(-150px, 0, 0)",
   },
+  circle: { width: "30%", height: "auto", borderRadius: "100%" },
+  logoText: { width: "65%", height: "auto" },
   logoPlaceHolder: {
     height: "5rem",
   },

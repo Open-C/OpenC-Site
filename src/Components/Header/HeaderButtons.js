@@ -40,19 +40,32 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const HeaderButtons = (props) => {
-  const { fullScreen } = props;
+  const { fullScreen, handleClick, centroRef, celoHubRef, contactUsRef } =
+    props;
   const classes = useStyles();
   return fullScreen ? null : (
     <div className={classes.buttonGroup}>
-      <Typography variant="h2" className={classes.button}>
+      <Typography
+        variant="h2"
+        className={classes.button}
+        onClick={() => handleClick(centroRef)}
+      >
         Centro
       </Typography>
       <Divider opacity={0.5} />
-      <Typography variant="h2" className={classes.button}>
+      <Typography
+        variant="h2"
+        className={classes.button}
+        onClick={() => handleClick(celoHubRef)}
+      >
         CeloHub
       </Typography>
       <Divider opacity={0.5} />
-      <Typography variant="h2" className={classes.button}>
+      <Typography
+        variant="h2"
+        className={classes.button}
+        onClick={() => handleClick(contactUsRef)}
+      >
         Contact
       </Typography>
     </div>

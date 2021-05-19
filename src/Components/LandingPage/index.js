@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
 const LandingPage = (props) => {
   const isFullScreen = useScreenType() === "fullscreen";
   const centroRef = useRef();
+  const celoHubRef = useRef();
+  const contactUsRef = useRef();
   const classes = useStyles();
   // const centroVisible = useOnScreen(centroRef);
   // useEffect(() => {
@@ -50,13 +52,15 @@ const LandingPage = (props) => {
     <div className={classes.root}>
       <MainPage
         scrollDown={() => scrollToRef(centroRef)}
+        scrollTo={scrollToRef}
+        {...{ centroRef, celoHubRef, contactUsRef }}
         fullScreen={isFullScreen}
       />
       <Centro ref={centroRef} fullScreen={isFullScreen} />
-      <CeloHub fullScreen={isFullScreen} />
+      <CeloHub ref={celoHubRef} fullScreen={isFullScreen} />
       <Voila />
       <Pollen fullScreen={isFullScreen} />
-      <ContactUs />
+      <ContactUs ref={contactUsRef} />
       <ContactFooter />
     </div>
   );

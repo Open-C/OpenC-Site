@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import { TextField, makeStyles, Button, Typography } from "@material-ui/core";
 import { enrollBtn } from "../shared/MaterialStyles";
 import Layout from "../Layout";
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ContactUs = (props) => {
+const ContactUs = forwardRef((props, ref) => {
   const [fields, setFields] = useState({
     name: "",
     email: "",
@@ -46,7 +46,7 @@ const ContactUs = (props) => {
       message: "",
     });
   const form = (
-    <div className={classes.root}>
+    <div className={classes.root} ref={ref}>
       <Typography variant="h1" className={classes.title}>
         Contact Us
       </Typography>
@@ -119,6 +119,6 @@ const ContactUs = (props) => {
   );
 
   return <Layout background="#5849FD">{form}</Layout>;
-};
+});
 
 export default ContactUs;
