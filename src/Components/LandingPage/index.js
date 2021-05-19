@@ -12,7 +12,7 @@ import ContactFooter from "./ContactFooter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    overflowX: "hidden",
+    overflow: "hidden",
   },
 }));
 

@@ -92,6 +92,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     background: "#FFFFFF",
+    "@media (max-height:799px)": {
+      marginBottom: "auto",
+    },
   },
   containerTop: {
     width: "100%",
@@ -111,7 +114,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    positon: "relative",
+    position: "static",
   },
   containerInner: {
     display: "flex",
@@ -154,18 +157,21 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   openCLogoHeader: {
-    width: "10.25rem",
+    width: "8rem",
     height: "auto",
     //marginLeft: "2rem",
     //marginRight: "auto",
     transition: "all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
     position: "fixed",
-    left: "1rem",
-    top: ".25rem",
+    left: "5vw",
+    "@media (min-width:1400px)": {
+      left: "20vw",
+    },
+    top: ".6rem",
     //transform: "translate3d(-150px, 0, 0)",
   },
   logoPlaceHolder: {
-    height: "13rem",
+    height: "5rem",
   },
   content: {
     opacity: 0.75,

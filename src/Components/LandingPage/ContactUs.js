@@ -118,11 +118,7 @@ const ContactUs = (props) => {
     </div>
   );
 
-  return (
-    <Layout background="#5849FD" height="fit-content">
-      {form}
-    </Layout>
-  );
+  return <Layout background="#5849FD">{form}</Layout>;
 };
 
 export default ContactUs;
