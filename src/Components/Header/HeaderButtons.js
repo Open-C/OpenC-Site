@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
       background: "transparent",
     },
-    marginLeft: ".5rem",
-    marginRight: ".5rem",
+    marginLeft: "1rem",
+    marginRight: "1rem",
     cursor: "pointer",
   },
   hamburger: {

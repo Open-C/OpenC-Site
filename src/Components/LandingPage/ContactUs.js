@@ -11,10 +11,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginRight: "auto",
     marginLeft: "auto",
+    marginTop: "5rem",
   },
   button: enrollBtn,
   input: {
-    marginTop: "1rem",
+    marginTop: "min(1rem, 2.5%)",
     color: "#FFFFFF",
     opacity: 0.85,
   },
@@ -117,7 +118,11 @@ const ContactUs = (props) => {
     </div>
   );
 
-  return <Layout background="#5849FD">{form}</Layout>;
+  return (
+    <Layout background="#5849FD" height="fit-content">
+      {form}
+    </Layout>
+  );
 };
 
 export default ContactUs;

@@ -9,18 +9,19 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     width: "100%",
+    height: "20vh",
     background: (props) => props.background || "#5849FD",
+    alignItems: "center",
   },
   iconContainer: {
     display: "flex",
     width: "min(25rem, 50%)",
+    height: "100%",
     justifyContent: "space-between",
     alignItems: "center",
     marginLeft: "auto",
     marginRight: "auto",
-    padding: "1rem",
-    marginBottom: "auto",
-    marginTop: "auto",
+    marginTop: "1rem",
   },
   icon: {
     width: "20%",

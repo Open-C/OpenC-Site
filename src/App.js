@@ -17,6 +17,8 @@ const theme = createMuiTheme({
       dark: "#AF880B",
       light: "#F5D468",
     },
+    celoGold: "#fbcc5c",
+    centroBlue: "#0062ff",
   },
   typography: {
     fontFamily: "Lato, Arial",

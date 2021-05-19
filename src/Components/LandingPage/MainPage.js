@@ -53,7 +53,7 @@ const MainPage = (props) => {
         Open Source Projects on the Celo Blockchain
       </Typography>
       <Typography variant="h2" className={classes.content}>
-        Funded by the Celo Foundation, and Flori Ventures.
+        Funded by the Celo Foundation and Flori Ventures.
       </Typography>
     </div>
   );

@@ -35,7 +35,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "2rem",
     textAlign: props.fullScreen && "center",
   }),
-  button: (props) => enrollBtn(props),
+  button: (props) =>
+    enrollBtn({
+      ...props,
+      hoverProps: { background: theme.palette.centroBlue },
+    }),
 }));
 
 const Centro = forwardRef((props, ref) => {

@@ -30,7 +30,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "1.5rem",
     textAlign: props.fullScreen && "center",
   }),
-  button: enrollBtn,
+  button: (props) =>
+    enrollBtn({
+      ...props,
+      hoverProps: {
+        background: theme.palette.celoGold,
+      },
+    }),
 }));
 
 const CeloHub = (props) => {
