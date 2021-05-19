@@ -106,6 +106,9 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     background: "#FFFFFF",
     zIndex: 2,
+    "@media (max-height:799px)": {
+      height: "3rem",
+    },
   },
   containerOuter: {
     width: "min(90%, 93.125rem)",
@@ -168,6 +171,9 @@ const useStyles = makeStyles((theme) => ({
       left: "20vw",
     },
     top: ".6rem",
+    "@media (max-width:799px)": {
+      width: "6rem",
+    },
     //transform: "translate3d(-150px, 0, 0)",
   },
   logoPlaceHolder: {
