@@ -37,7 +37,7 @@ const CeloHub = (props) => {
       <img src={logo} alt="Voila Logo" className={classes.logo} />
       <img src={title} alt="Voila Finance" className={classes.title} />
       <Typography variant="h2" className={classes.content}>
-        ~Incognito~
+        ~ Incognito ~
       </Typography>
     </div>
   );

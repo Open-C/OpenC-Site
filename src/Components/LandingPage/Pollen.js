@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: "1rem",
   },
+  content: {
+    marginTop: "2rem",
+    opacity: 0.7,
+  },
 }));
 
 const CeloHub = (props) => {
@@ -31,6 +35,9 @@ const CeloHub = (props) => {
       <img src={logo} alt="Voila Logo" className={classes.logo} />
       <Typography variant="h2" className={classes.title}>
         Village banking via USSD for farmers in Zambia
+      </Typography>
+      <Typography variant="h6" className={classes.content}>
+        ~ Private Beta ~
       </Typography>
     </div>
   );
