@@ -1,3 +1,5 @@
+import { makeStyles } from "@material-ui/core";
+
 export const enrollBtn = (props) => ({
   background: `${props.buttonBackground} 0% 0% no-repeat padding-box`,
   boxShadow: "0px 3px 2px #2700FF29",
@@ -27,3 +29,47 @@ export const enrollBtn = (props) => ({
     padding: "1.5rem",
   },
 });
+
+export const SlideIn = makeStyles((theme) => ({
+  right: {
+    animation: "2s cubic-bezier(1,-0.55, 0, 2.37) 0s 1 $slideInFromRight",
+  },
+  left: {
+    animation: "1s ease-in 0s 1 $slideInFromLeft",
+  },
+  center: {
+    animation: "1s ease-out 0s 1 $slideUp",
+  },
+  "@keyframes slideInFromRight": {
+    "0%": {
+      transform:
+        "translateX(-300%) translateY(-300%) rotate3d(0, 1, 0, 180deg)",
+    },
+    // "50%": {
+    //   transform: "translateX(-50%) translateY(-50%) rotate3d(0, 1, 0, 90deg)",
+    // },
+    "100%": {
+      transform: "translateX(0) rotate3d(0, 1, 0, 0)",
+    },
+  },
+  "@keyframes slideUp": {
+    "0%": {
+      transform: "translateY(-100%) rotate3d(1, 0, 0, 180deg)",
+    },
+    "100%": {
+      transform: "translateX(0) rotate3d(0, 1, 0, 0)",
+    },
+  },
+  "@keyframes slideInFromLeft": {
+    "0%": {
+      transform: "translateX(100%) translateY(300%) rotate3d(0, 1, 0, -180deg)",
+    },
+    // "50%": {
+    //   transform: "translateX(50%) translateY(150%) rotate3d(0, 1, 0, -90deg)",
+    // },
+
+    "100%": {
+      transform: "translateX(0) rotate3d(0, 1, 0, 0)",
+    },
+  },
+}));

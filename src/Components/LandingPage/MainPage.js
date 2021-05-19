@@ -7,6 +7,8 @@ import downArrow from "../../Assets/DownArrow.png";
 import { makeStyles, Typography } from "@material-ui/core";
 import HeaderButtons from "../Header/HeaderButtons";
 import clsx from "clsx";
+import "../shared/shared.css";
+import { SlideIn } from "../shared/MaterialStyles";
 
 const MainPage = (props) => {
   const {
@@ -18,6 +20,7 @@ const MainPage = (props) => {
     contactUsRef,
   } = props;
   const classes = useStyles({ fullScreen });
+  const animations = SlideIn();
 
   const logoRef = useRef(null);
 
@@ -81,7 +84,7 @@ const MainPage = (props) => {
     </div>
   );
   const Left = (
-    <div className={classes.infoContainer}>
+    <div className={`${classes.infoContainer} ${animations.left}`}>
       <div ref={logoRef} className={classes.scrollDetection} />
 
       {Logov2}
@@ -97,12 +100,12 @@ const MainPage = (props) => {
   const Right = (
     <img
       src={projectsImg}
-      className={classes.projects}
+      className={`${classes.projects} ${animations.right}`}
       alt="featured-projects-logo"
     />
   );
   return (
-    <div className={classes.root}>
+    <div className={`${classes.root} `}>
       {Top}
       <div className={classes.containerOuter}>
         <div className={classes.containerInner}>
@@ -155,6 +158,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     position: "static",
+    "@media (max-width:799px)": {
+      justifyContent: "flex-start",
+    },
   },
   containerInner: {
     display: "flex",
@@ -163,6 +169,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-end",
     //margin: "auto",
     alignSelf: "center",
+    background: "#FFFFFF",
+    "@media (max-width:799px)": {
+      marginTop: "10vh",
+    },
   },
   projects: {
     height: "auto",
@@ -211,7 +221,7 @@ const useStyles = makeStyles((theme) => ({
     "@media (min-width:1400px)": {
       left: "20vw",
     },
-    top: ".6rem",
+    top: ".25rem",
     "@media (max-width:799px)": {
       width: "6rem",
     },
@@ -273,6 +283,18 @@ const useStyles = makeStyles((theme) => ({
   scrollDetection: {
     width: 5,
     height: 5,
+  },
+  movingCircle: {
+    width: "1vmin",
+    height: "1vmin",
+    borderRadius: "1vmin",
+    backfaceVisibility: "hidden",
+    position: "absolute",
+    animation: "move",
+    animationDuration: "39s",
+    animationTimingFunction: "linear",
+    animationIterationCount: "infinite",
+    opacity: 0.8,
   },
 }));
 

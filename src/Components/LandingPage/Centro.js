@@ -4,7 +4,7 @@ import logo from "../../Assets/centro-logo-full.png";
 import mockups from "../../Assets/centro-mockups.png";
 import { makeStyles, Typography } from "@material-ui/core";
 import { Button } from "@material-ui/core";
-import { enrollBtn } from "../shared/MaterialStyles";
+import { enrollBtn, SlideIn } from "../shared/MaterialStyles";
 
 const useStyles = makeStyles((theme) => ({
   mockup: {
@@ -49,9 +49,10 @@ const Centro = forwardRef((props, ref) => {
     buttonColor: "#FFFFFF",
     fullScreen,
   });
+  const animations = SlideIn();
 
   const RightSide = (
-    <div className={classes.infoContainer}>
+    <div className={`${classes.infoContainer}`}>
       <img src={logo} className={classes.centroLogo} />
       {/* <div className={classes.content}>
         Access everything in the Celo DeFi ecosystem from one app. Coming soon!
@@ -67,7 +68,7 @@ const Centro = forwardRef((props, ref) => {
       </Button>
     </div>
   );
-  const LeftSide = <img src={mockups} className={classes.mockup} />;
+  const LeftSide = <img src={mockups} className={`${classes.mockup}`} />;
 
   return (
     <div ref={ref}>
