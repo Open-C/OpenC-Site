@@ -27,6 +27,16 @@ const useStyles = makeStyles((theme) => ({
     width: "20%",
     height: "auto",
     cursor: "pointer",
+    borderRadius: "100%",
+    transition: "all 0.5s ease-in",
+
+    "&:hover": {
+      //opacity: 0.5,
+      opacity: 1,
+      transition: "all 0.4s cubic-bezier(0, 3.82, 1, 1)", //cubic-bezier(1, -0.7, 0, 3.4)",
+      boxShadow: "-1px 1px 13px 4px " + theme.palette.secondary.main,
+      background: theme.palette.secondary.main,
+    },
   },
 }));
 
