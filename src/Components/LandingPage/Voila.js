@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../Layout";
 import logo from "../../Assets/voila-logo.svg";
 import title from "../../Assets/voila-text.png";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import { enrollBtn } from "../shared/MaterialStyles";
 
@@ -22,6 +22,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: "1rem",
     width: "100%",
+    color: "#FFFFFF",
+  },
+  content: {
+    marginTop: "1rem",
+    opacity: 0.7,
   },
 }));
 
@@ -31,6 +36,9 @@ const CeloHub = (props) => {
     <div className={classes.infoContainer}>
       <img src={logo} alt="Voila Logo" className={classes.logo} />
       <img src={title} alt="Voila Finance" className={classes.title} />
+      <Typography variant="h2" className={classes.content}>
+        ~Incognito~
+      </Typography>
     </div>
   );
   return (
