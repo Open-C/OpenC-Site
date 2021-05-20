@@ -31,7 +31,7 @@ const ContactUs = forwardRef((props, ref) => {
     email: "",
     message: "",
   });
-  const classes = useStyles();
+  const classes = useStyles({ buttonBackground: "#6153FF" });
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFields({

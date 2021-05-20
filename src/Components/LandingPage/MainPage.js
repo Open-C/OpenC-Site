@@ -84,7 +84,7 @@ const MainPage = (props) => {
     </div>
   );
   const Left = (
-    <div className={`${classes.infoContainer} ${animations.left}`}>
+    <div className={`${classes.infoContainer}`}>
       <div ref={logoRef} className={classes.scrollDetection} />
 
       {Logov2}
@@ -100,7 +100,7 @@ const MainPage = (props) => {
   const Right = (
     <img
       src={projectsImg}
-      className={`${classes.projects} ${animations.right}`}
+      className={`${classes.projects}`}
       alt="featured-projects-logo"
     />
   );
@@ -108,7 +108,7 @@ const MainPage = (props) => {
     <div className={`${classes.root} `}>
       {Top}
       <div className={classes.containerOuter}>
-        <div className={classes.containerInner}>
+        <div className={`${classes.containerInner} ${animations.center}`}>
           {Left}
           {!fullScreen && Right}
         </div>
@@ -139,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
   containerTop: {
     width: "100%",
     display: "flex",
-    height: "4rem",
+    height: "5rem",
     alignItems: "center",
     position: "fixed",
     left: 0,
@@ -147,7 +147,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#FFFFFF",
     zIndex: 2,
     "@media (max-height:799px)": {
-      height: "3rem",
+      height: "4rem",
     },
   },
   containerOuter: {

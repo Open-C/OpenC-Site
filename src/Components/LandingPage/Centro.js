@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
   button: (props) =>
     enrollBtn({
       ...props,
-      hoverProps: { background: theme.palette.centroBlue },
     }),
 }));
 

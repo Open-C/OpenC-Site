@@ -54,10 +54,12 @@ export const SlideIn = makeStyles((theme) => ({
   },
   "@keyframes slideUp": {
     "0%": {
-      transform: "translateY(-100%) rotate3d(1, 0, 0, 180deg)",
+      transform: "translateY(-100%)",
+      opacity: 0,
     },
     "100%": {
-      transform: "translateX(0) rotate3d(0, 1, 0, 0)",
+      transform: "translateX(0)",
+      opacity: 1,
     },
   },
   "@keyframes slideInFromLeft": {
