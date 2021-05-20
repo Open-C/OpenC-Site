@@ -74,7 +74,11 @@ const MainPage = (props) => {
   );
 
   const Top = (
-    <div className={classes.containerTop}>
+    <div
+      className={`${classes.containerTop} ${
+        !isIntersecting && classes.containerTopShow
+      }`}
+    >
       {/* {!isIntersecting && Logo} */}
       <HeaderButtons
         fullScreen={fullScreen}
@@ -132,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     background: "#FFFFFF",
-    "@media (max-height:799px)": {
+    "@media (max-width:799px)": {
       marginBottom: "auto",
       background: theme.palette.gray,
     },
@@ -147,9 +151,16 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     background: "#FFFFFF",
     zIndex: 2,
+    transition: "all 1s ease-in",
+
     "@media (max-width:799px)": {
-      height: "4rem",
+      height: "3rem",
+      background: "none",
     },
+  },
+  containerTopShow: {
+    transition: "all 1s ease-in",
+    background: "#FFFFFF",
   },
   containerOuter: {
     width: "min(90%, 93.125rem)",
@@ -170,9 +181,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-end",
     //margin: "auto",
     alignSelf: "center",
-    background: "#FFFFFF",
     "@media (max-width:799px)": {
-      marginTop: "10vh",
+      marginTop: "15vh",
     },
   },
   projects: {
@@ -184,6 +194,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     width: !props.fullScreen && "70%",
     alignItems: "flex-start",
+    background: "#FFFFFF",
     padding: "1rem",
     "@media (max-width:799px)": {
       boxShadow: `#0000000f -3px 3px 20px 0px`,
@@ -225,7 +236,7 @@ const useStyles = makeStyles((theme) => ({
     top: "1rem",
     "@media (max-width:799px)": {
       width: "6rem",
-      top: ".25rem",
+      top: ".3rem",
     },
     //transform: "translate3d(-150px, 0, 0)",
   },
