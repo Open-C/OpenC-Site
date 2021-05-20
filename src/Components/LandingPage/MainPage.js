@@ -134,6 +134,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#FFFFFF",
     "@media (max-height:799px)": {
       marginBottom: "auto",
+      background: theme.palette.gray,
     },
   },
   containerTop: {
@@ -146,7 +147,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     background: "#FFFFFF",
     zIndex: 2,
-    "@media (max-height:799px)": {
+    "@media (max-width:799px)": {
       height: "4rem",
     },
   },
@@ -185,7 +186,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-start",
     padding: "1rem",
     "@media (max-width:799px)": {
-      boxShadow: `${theme.palette.primary.light} -3px 3px 20px 0px, ${theme.palette.primary.dark} -1px 1px 7px 0px`,
+      boxShadow: `#0000000f -3px 3px 20px 0px`,
       padding: "2rem",
       borderRadius: "2rem",
     },
@@ -221,9 +222,10 @@ const useStyles = makeStyles((theme) => ({
     "@media (min-width:1400px)": {
       left: "20vw",
     },
-    top: ".25rem",
+    top: "1rem",
     "@media (max-width:799px)": {
       width: "6rem",
+      top: ".25rem",
     },
     //transform: "translate3d(-150px, 0, 0)",
   },

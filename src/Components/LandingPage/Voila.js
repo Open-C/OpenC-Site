@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     height: "auto",
     width: "min(13rem, 50%)",
+    opacity: 0.75,
   },
   title: {
     height: "auto",
