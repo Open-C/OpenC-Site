@@ -21,6 +21,7 @@ const MainPage = (props) => {
   } = props;
   const classes = useStyles({ fullScreen });
   const animations = SlideIn();
+  const [logoClicked, setLogoClicked] = useState(false);
 
   const logoRef = useRef(null);
 
@@ -58,16 +59,18 @@ const MainPage = (props) => {
       className={clsx(classes.openCLogo, {
         [classes.openCLogoHeader]: !isIntersecting,
       })}
-      onClick={
-        !isIntersecting &&
-        (() => window.scrollTo({ top: 0, behavior: "smooth" }))
-      }
+      onClick={() => {
+        if (!isIntersecting) window.scrollTo({ top: 0, behavior: "smooth" });
+        setLogoClicked(!logoClicked);
+      }}
     >
       <img
         src={circle}
         alt="OpenC Logo"
         id="openC-logo"
-        className={`${classes.circle} ${animations.spin}`}
+        className={clsx(classes.circle, {
+          [classes.circleClicked]: logoClicked,
+        })}
       />
       <img src={logoText} alt="OpenC" className={classes.logoText} />
     </div>
@@ -112,15 +115,15 @@ const MainPage = (props) => {
     <div className={`${classes.root} `}>
       {Top}
       <div className={classes.containerOuter}>
-        <div className={`${classes.containerInner} ${animations.center}`}>
+        <div className={`${classes.containerInner} ${animations.appear}`}>
           {Left}
           {!fullScreen && Right}
         </div>
-        <div>
+        <div className={animations.appear}>
           <img
             src={downArrow}
             alt="Down Arrow"
-            className={classes.down}
+            className={`${classes.down}`}
             onClick={scrollDown}
           />
         </div>
@@ -244,13 +247,17 @@ const useStyles = makeStyles((theme) => ({
     width: "30%",
     height: "auto",
     borderRadius: "100%",
-    transition: "all 1s ease-in",
-
-    "&:hover": {
-      //transform: "rotate3d(0, 1, 0, 540deg)",
-      boxShadow: "1px 1px 10px 3px " + theme.palette.secondary.main,
-      transition: "all 0.7s ease-in",
-    },
+    transition: "all 1s ease-in-out",
+    // "&:hover": {
+    //   transform: "rotate3d(0, 1, 0, 540deg)",
+    //   boxShadow: "1px 1px 10px 3px " + theme.palette.secondary.main,
+    //   transition: "all 0.7s ease-in",
+    // },
+  },
+  circleClicked: {
+    transform: "rotate3d(0, 1, 0, 720deg)",
+    boxShadow: "1px 1px 10px 3px " + theme.palette.secondary.main,
+    transition: "all 1s ease-in-out",
   },
   logoText: { width: "65%", height: "auto" },
   logoPlaceHolder: {

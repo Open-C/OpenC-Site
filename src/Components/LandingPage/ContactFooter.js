@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     width: "100%",
-    height: "10vh",
+    height: "15vh",
     background: (props) => props.background || "#5849FD",
     alignItems: "center",
   },
@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       //opacity: 0.5,
       opacity: 1,
-      transition: "all 0.4s ease-in", //cubic-bezier(1, -0.7, 0, 3.4)",
-      boxShadow: "-1px 1px 13px 4px " + theme.palette.secondary.main,
+      transition: "all 0.2s ease-in", //cubic-bezier(1, -0.7, 0, 3.4)",
+      boxShadow: "-1px 1px 10px 1px " + theme.palette.secondary.light,
     },
   },
 }));

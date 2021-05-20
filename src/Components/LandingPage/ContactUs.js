@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginRight: "auto",
     marginLeft: "auto",
-    marginTop: "5rem",
+    marginTop: "1rem",
   },
   button: enrollBtn,
   input: {

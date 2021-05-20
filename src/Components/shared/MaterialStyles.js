@@ -37,20 +37,19 @@ export const SlideIn = makeStyles((theme) => ({
   left: {
     animation: "1s ease-in 0s 1 $slideInFromLeft",
   },
-  center: {
-    animation: "1s ease-out 0s 1 $slideUp",
+  appear: {
+    animation: "2s ease-in 0s 1 $appear",
   },
   spin: {
-    "&:hover": {
-      animation: "1s ease-out 0s 1 $spin",
-    },
+    animation: "1s cubic-bezier(0.51, 0.5, 1, 1) 0s infinite $spin",
+    transition: "all 1s ease-in",
   },
   "@keyframes spin": {
     "0%": {
       transform: "rotate3d(0, 1, 0, 0deg)",
     },
     "100%": {
-      transform: "rotate3d(0, 1, 0, 540deg)",
+      transform: "rotate3d(0, 1, 0, 720deg)",
     },
   },
   "@keyframes slideInFromRight": {
@@ -65,13 +64,11 @@ export const SlideIn = makeStyles((theme) => ({
       transform: "translateX(0) rotate3d(0, 1, 0, 0)",
     },
   },
-  "@keyframes slideUp": {
+  "@keyframes appear": {
     "0%": {
-      transform: "translateY(100%)",
       opacity: 0,
     },
     "100%": {
-      transform: "translateX(0)",
       opacity: 1,
     },
   },
