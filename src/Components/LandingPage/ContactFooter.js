@@ -9,13 +9,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     width: "100%",
-    height: "20vh",
+    height: "10vh",
     background: (props) => props.background || "#5849FD",
     alignItems: "center",
   },
   iconContainer: {
     display: "flex",
-    width: "min(25rem, 50%)",
+    width: "min(15rem, 50%)",
     height: "100%",
     justifyContent: "space-between",
     alignItems: "center",
@@ -33,9 +33,8 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       //opacity: 0.5,
       opacity: 1,
-      transition: "all 0.4s cubic-bezier(0, 3.82, 1, 1)", //cubic-bezier(1, -0.7, 0, 3.4)",
+      transition: "all 0.4s ease-in", //cubic-bezier(1, -0.7, 0, 3.4)",
       boxShadow: "-1px 1px 13px 4px " + theme.palette.secondary.main,
-      background: theme.palette.secondary.main,
     },
   },
 }));
