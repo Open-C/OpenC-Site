@@ -67,7 +67,7 @@ const MainPage = (props) => {
         src={circle}
         alt="OpenC Logo"
         id="openC-logo"
-        className={classes.circle}
+        className={`${classes.circle} ${animations.spin}`}
       />
       <img src={logoText} alt="OpenC" className={classes.logoText} />
     </div>
@@ -225,7 +225,7 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     //marginLeft: "2rem",
     //marginRight: "auto",
-    transition: "all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
+    transition: "all 1s ease-in",
     position: "fixed",
     left: "5vw",
     display: "flex",
@@ -247,7 +247,7 @@ const useStyles = makeStyles((theme) => ({
     transition: "all 1s ease-in",
 
     "&:hover": {
-      transform: "rotate3d(0, 1, 0, 540deg)",
+      //transform: "rotate3d(0, 1, 0, 540deg)",
       boxShadow: "1px 1px 10px 3px " + theme.palette.secondary.main,
       transition: "all 0.7s ease-in",
     },
