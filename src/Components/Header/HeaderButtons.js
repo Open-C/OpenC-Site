@@ -11,11 +11,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginRight: "2rem",
     marginLeft: "auto",
-    "&:hover": {
-      color: theme.palette.secondary.main,
-    },
-    // marginBottom: "auto",
-    // marginTop:
   },
   button: {
     textTransform: "none",
